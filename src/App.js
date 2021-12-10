@@ -1,12 +1,12 @@
 import LogicFlow from "@logicflow/core";
 import "@logicflow/core/dist/style/index.css";
-import { useEffect } from "react";
-import "./styles.css";
+import { useEffect, useRef } from "react";
 
 export default function App() {
+  const refContainer = useRef();
   useEffect(() => {
     const logicflow = new LogicFlow({
-      container: document.querySelector("#graph"),
+      container: refContainer.current,
       grid: true,
       width: 1000,
       height: 500
@@ -35,5 +35,5 @@ export default function App() {
       ]
     });
   }, []);
-  return <div className="App" id="graph"></div>;
+  return <div className="App" ref={refContainer}></div>;
 }
