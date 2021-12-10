@@ -1,7 +1,6 @@
 import LogicFlow from "@logicflow/core";
 import "@logicflow/core/dist/style/index.css";
 import { useEffect } from "react";
-import "./styles.css";
 
 export default function App() {
   useEffect(() => {
